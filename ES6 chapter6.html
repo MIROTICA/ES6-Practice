@@ -1,0 +1,31 @@
+<script>
+
+var 변수 = 'dddd';//그냥 문자와 숫자는 primitive data type 변수에 값이 그대로 저장됨
+
+var 어레이 = [1,2,3]//Array,object 는 변수에 값이 저장이 안됨 reference가 저장됩니다.
+
+var 오브젝트 = { name : 'kim' }; //직접 저장이아닌 있다는 사실을 저장
+
+//ex)
+var 이름1 = { 'name': '김' };
+var 이름2 = 이름1; //이름2에 이름 1의 화살표를 복사
+이름1.name = '박';//이런 오브젝트 복사는 위험함
+
+function 변경(obj){
+    obj = {name : 'park' }//=var obj
+}
+변경(이름1);//파라미터는 변수 생성기 혹은 할당과 같음
+
+//constructor obj 찍어내는 몰
+
+var 사람 = { name: 'kim' };
+
+//constructor 함수는 통상적으로 첫문자 대문자
+function Student(이름,나이){
+    this.name = 이름;
+    this.age = 나이;
+}
+//this = 기계에서 새로 생성되는 obj (인스턴스)
+
+
+</script>

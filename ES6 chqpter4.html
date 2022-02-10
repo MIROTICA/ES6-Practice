@@ -1,0 +1,54 @@
+<script>
+/*spread operator
+1. Array에 붙이면 대괄호를 제거합니다.
+2. 대괄호 제거 후 문자에 붙이면 펼쳐서 인덱스화 
+3. Array 합치기/복사 가능
+4. deep copy 상황에 사용 reference data type 탈출가능
+5. 오브젝트 복사도 가능
+6. ...은 중괄호 대괄호 함수 안에서만 사용가능
+*/
+var 어레이 = ['hello','world'];
+console.log(...어레이);//= log('hello','world');
+
+var 문자 = 'hello';
+console.log(...문자);
+
+var a = [1,2,3];
+var b = [4,5];
+
+var c = [...a, ...b];// = 1,2,3
+console.log(c);
+
+var o1 = {
+    a : 1,
+    b : 2 
+};
+var o2 = {...o1, c : 3 };
+var o3 ={ a : 3, ...a };
+
+console.log(o2);
+console.log(o3);
+
+function 더하기(a,b,c){
+    console.log(a + b + c);
+}
+var 아레이 = [10,20,30];
+
+더하기(...아레이);
+//더하기.apply(undefined,아레이)
+
+var person = {
+    인사:function(){
+        console.log(this.name + '안녕');
+    }
+}
+
+var person2 = {
+    name: '손흥민'
+}
+
+person.인사.apply(person2,[1,2]);//두가지 성질은 같지만 파라미터 삽입시 다름
+person.인사.call(person2 ,1,2);
+
+
+</script>

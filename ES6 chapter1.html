@@ -1,0 +1,62 @@
+<div></div>
+<button id="button">버튼이에요</button>
+
+
+<script>
+var 함수 = (a)=>{
+    return a + 10
+} 
+
+[1,2,3,4].forEach((a)=>{
+    console.log(a);
+})
+
+
+
+var 오브젝트 = {
+    함수 : ()=>{
+        return this
+    }
+}
+
+
+
+var 사람 = {
+  name: '손흥민',
+  sayHi:function(){
+      console.log("안녕 나는 " + this.name);
+  }
+}
+
+사람.sayHi(); //안녕 나는 손흥민
+
+var 자료 = { 
+  data : [1,2,3,4,5] 
+}
+
+/*var 전부더하기 = function (){
+    console.log(자료.data.reduce((acc,cur,i)=>{
+        return acc + cur;
+    }));
+}*/
+
+자료.전부더하기 = function(a){  
+    var all = 0;
+    this.data.forEach(function(a){
+       all = a + all;
+    })
+    console.log(all);
+}
+
+
+자료.전부더하기();
+
+
+document.getElementById("button").addEventListener('click',function(){ 
+    setTimeout(
+    ()=>{
+        console.log(this.innerHTML)
+    },1000
+)});
+
+</script>

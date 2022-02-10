@@ -1,0 +1,97 @@
+<script>
+
+    function 임시함수(){
+         return 10
+    }
+
+
+        function 더하기(a,b = 임시함수()){    
+            console.log(a + b);
+        }     
+        더하기(1);
+        //함수의 디폴트 파라미터  (a, b = 10) b에 값을 넣지 않으면 10이 부여되서 작동
+
+
+         function 함수(a,b,c){
+             console.log(arguments);
+             console.log(arguments[2]);
+             console.log(arguments[1]);
+             console.log(arguments[0]);
+             
+             for(let i = 0; i< arguments.length; i++){
+                 console.log(arguments[i]);
+             }
+
+
+         }//arguments는 파라미터의 array화 하지만 옛날 문법임
+         함수(1,2,3)
+
+
+        function 함수2(a,b,...파라미터들){
+             console.log(파라미터들);
+        }
+        함수2(1,2,3,4,5,6,7,8);//...rest는 모든 파라미터를 []에 보관 특정 수집 가능
+        //가장 뒤에 써야하고 두번이상 사용금지
+
+        // var a = [1,2,3];
+        // var b = '김밥';
+        // var c = [...b, ...a];
+        // console.log(c);
+        // 예상 결과 : 김밥,1,2,3
+        // 결과 : ["김","밥",1,2,3]
+
+        // var a = [1,2,3];
+        // var b = ['you', 'are'];
+        // var c = function(a,b){
+        // console.log( [[...a], ...[...b]][1] )
+        // }
+        // c(a,b);
+        // 예상 결과: 2
+        // 결과: you
+        
+        // function 함수(a = 5, b = a * 2 ){
+        // console.log(a + b);
+        // return 10
+        // }
+        // 함수(3);
+        // 예상 결과 : 9
+
+        // function 함수(a = 5, b = a * 2 ){
+        // console.log(a + b);
+        // }       
+        // 함수(undefined, undefined);
+        // undefined
+        // 결과 : undefined = 아무 값을 입력하지 않은 것으로 판단 따라서 15
+
+
+        // function 어레이(...rest){
+        //     console.log(rest);
+        // }
+
+        // var newArray = 어레이(1,2,3,4,5);
+        // console.log(newArray);
+        
+        // function 최댓값(...숫자들){
+        //     let Maxy = Math.max(...숫자들);
+        //     console.log(Maxy);
+        // }
+
+        // var numbers = [2,3,4,5,6,1,3,2,5,5,4,6,7];
+        // 최댓값(...numbers);
+
+        // 결과  var numbers =  
+
+        //  function 정렬([...rest]){
+        //     console.log(rest.sort());
+        // }
+
+        // 정렬('bear'); 
+
+        글자세기('aacbbb');
+        //{a : 2, b : 3, c : 1}
+
+        function 글자세기(글자){
+            
+        }
+
+</script>
